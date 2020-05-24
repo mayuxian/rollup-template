@@ -1,0 +1,51 @@
+{
+  "name": "rollup-template",
+  "version": "1.0.0",
+  "description": "A Template build by rollup.",
+  "main": "lib/index.min.js",
+  "module": "es/index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/rollup -c build/rollup.demo.config.js --watch",
+    "demo": "./node_modules/.bin/rimraf public/static && cross-env NODE_ENV=production ./node_modules/.bin/rollup -c build/rollup.demo.config.js",
+    "lib": "./node_modules/.bin/rimraf lib && cross-env NODE_ENV=production ./node_modules/.bin/rollup -c build/rollup.lib.config.js",
+    "v": "node build/update-version.js",
+    "pub": "npm run lib && npm publish"
+  },
+  "keywords": [
+    "rollup-cli"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-alias": "^3.1.0",
+    "@rollup/plugin-babel": "^5.0.2",
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-replace": "^2.3.2",
+    "autoprefixer": "^9.8.0",
+    "cross-env": "^7.0.2",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-calc": "^7.0.2",
+    "postcss-color-function": "^4.1.0",
+    "postcss-csso": "^4.0.0",
+    "postcss-extend": "^1.0.5",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-mixins": "^6.2.3",
+    "postcss-modules": "^2.0.0",
+    "postcss-nested": "^4.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.10.5",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-filesize": "^9.0.0",
+    "rollup-plugin-livereload": "^1.3.0",
+    "rollup-plugin-postcss": "^3.1.1",
+    "rollup-plugin-progress": "^1.1.2",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-watch": "^4.3.1"
+  },
+  "author": "mayuxian <mayuxian830@163.com>",
+  "license": "MIT"
+}

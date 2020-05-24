@@ -1,2 +1,3 @@
-# rollup-template
-可以编译打包独立的js库
+# util_library
+
+A project build by rollup-cli.
