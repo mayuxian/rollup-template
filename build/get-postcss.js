@@ -1,7 +1,7 @@
 import path from 'path';
 import config from './config';
 
-export default function getPostcss ({
+export default function getPostcss({
   extract,
   minify
 }) {
@@ -11,7 +11,7 @@ export default function getPostcss ({
     sourceMap: config.dev,
     extensions: ['.css', '.mcss'],
     extract,
-    getExport (id) {
+    getExport(id) {
       return cssExportMap[id] || {};
     },
     plugins: [
@@ -29,6 +29,7 @@ export default function getPostcss ({
         mediaQueries: true,
         selectors: false
       }),
+      //根据自己需要配置
       // config.px2rem.use && require('postcss-px2rem')({
       //   remUnit: config.px2rem.unit || 16,
       //   remPrecision: 5,
@@ -50,7 +51,7 @@ export default function getPostcss ({
       require('postcss-modules')({
         generateScopedName: '[local]___[hash:base64:8]',
         globalModulePaths: config.cssModules.global,
-        getJSON (id, exportTokens) {
+        getJSON(id, exportTokens) {
           cssExportMap[id] = exportTokens;
         }
       }),
