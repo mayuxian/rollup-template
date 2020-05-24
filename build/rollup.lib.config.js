@@ -1,17 +1,13 @@
 import getPlugin from './get-plugin';
 import { name } from '../package.json';
 
-//https://segmentfault.com/a/1190000010628352
-// 你也可以使用babel-preset-es2015-rollup这个包（搭配babel-core），它集成了babel-preset-es2015，babel-plugin-transform-es2015-modules-commonjs和babel-plugin-external-helpers三个模块，使用起来更加方便，只要将.babelrc文件修改成{ "presets": ["es2015-rollup"] }就可以使用了。
-
-const entry = 'es/invoking-proxy.js';
-// const moduleName = name.replace(/-(\w)/g, ($, $1) => $1.toUpperCase());
-const moduleName = 'invokingProxy2';
+const entry = 'es/index.js';
+const moduleName = name.replace(/-(\w)/g, ($, $1) => $1.toUpperCase());
 export default [{
   input: entry,
   output: {
     name: moduleName,
-    file: 'lib/invoking-proxy.js',
+    file: 'lib/index.js',
     format: 'umd', //iife 游览器
     exports: 'named',
     sourcemap: false
@@ -37,7 +33,7 @@ export default [{
   input: entry,
   output: {
     name: moduleName,
-    file: 'lib/invoking-proxy.min.js',
+    file: 'lib/index.min.js',
     format: 'umd',
     exports: 'named',
     sourcemap: false
