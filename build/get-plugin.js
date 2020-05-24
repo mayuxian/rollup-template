@@ -47,7 +47,8 @@ const plugins = {
     if (!config.eslint) return;
 
     return eslint({
-      include: ['src/**/*.js', 'es/**/*.js']
+      include: ['src/**/*.js', 'es/**/*.js'],
+      fix: true
     });
   },
   babel() {

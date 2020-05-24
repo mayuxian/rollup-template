@@ -1,4 +1,5 @@
 // 检测代码格式配置 .eslintrc.js
+const __DEV__ = (process.env.NODE_ENV || "development") === "development";
 
 module.exports = {
   root: true,
@@ -12,10 +13,14 @@ module.exports = {
     es6: true,
   },
   extends: ['eslint:recommended'],
-  rules: {
-    //TODO:生产环境先设置成警告.真实要设置成error
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  "rules": {
+    "eol-last": 0,
+    "comma-dangle": 0,
+    "no-var": 1,
+    "no-alert": 1,
+    "no-unused-vars": __DEV__ ? 1 : 2,
+    "no-debugger": __DEV__ ? 'off' : 'error',
+    "no-console": __DEV__ ? 'off' : 'warn'
   },
   // rules: {
   //   'accessor-pairs': 2,
