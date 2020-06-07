@@ -11,6 +11,11 @@
     "v": "node build/update-version.js",
     "pub": "npm run lib && npm publish"
   },
+  "keywords": [
+    "rollup",
+    "rollup-template",
+    "roller"
+  ],
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
